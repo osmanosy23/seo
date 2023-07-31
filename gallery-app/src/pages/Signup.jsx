@@ -3,6 +3,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { galleryDescription } from './description';
 
 const Signup = () => {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
