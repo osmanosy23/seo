@@ -4,7 +4,7 @@ import { galleryDescription } from './description';
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
