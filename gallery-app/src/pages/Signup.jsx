@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { galleryDescription } from './description';
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate ();
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -27,13 +29,16 @@ const Signup = () => {
         setIsSubmitting(false);
         const user = userCredential.user;
         console.log("User signed up successfully:", user);
+        navigate('/');  // Replace '/homepage' with the correct path to your homepage
       })
       .catch((error) => {
+        console.error("Error creating new user:", error);
         // Handle sign-up errors
         setIsSubmitting(false);
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Sign-up error:", errorCode, errorMessage);
+        setButtonText("Failed. Try again.");
       });
   };
 
