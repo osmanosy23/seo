@@ -2,9 +2,10 @@
 
 export const galleryDescription = (
   <div>
-    <p>
+    <h1>
       Welcome to Gallery Pro!
-    </p>
+    </h1>
+    <br></br>
     <p>
       Capture, Collect, and Share Your Precious Moments
     </p>

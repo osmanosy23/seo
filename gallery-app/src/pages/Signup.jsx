@@ -8,6 +8,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [signupError, setSignupError] = useState(null);
   const navigate = useNavigate ();
 
   const handleSignUp = (event) => {
@@ -22,6 +23,8 @@ const Signup = () => {
     setIsSubmitting(true);
 
     const auth = getAuth();
+    console.log("Email:", email);
+    console.log("Password:", password);
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -38,7 +41,7 @@ const Signup = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Sign-up error:", errorCode, errorMessage);
-        setButtonText("Failed. Try again.");
+        setSignupError("Failed. Try again.");
       });
   };
 
@@ -79,6 +82,7 @@ const Signup = () => {
                 <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
                   {isSubmitting ? "Signing up..." : "Signup"}
                 </button>
+                {signupError && <p className="text-red-500 mt-2">{signupError}</p>}
               </div>
             </div>
           </div>
