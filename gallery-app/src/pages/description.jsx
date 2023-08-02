@@ -1,4 +1,6 @@
 // description.js
+import React from 'react';
+
 
 export const galleryDescription = (
   <div>
