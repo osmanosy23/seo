@@ -12,6 +12,8 @@ const Signup = () => {
   const [isLogin, setIsLogin] = useState(false); // Added state for login mode
   const [isAuthenticated, setIsAuthenticated] = useState(false); // New state to track authentication
   const navigate = useNavigate ();
+  const [nickname, setNickname] = useState("");
+  const [isNicknameValid, setIsNicknameValid] = useState(true);
 
   const handleAuth = (event) => {
     event.preventDefault();
@@ -38,6 +40,7 @@ const Signup = () => {
           const user = userCredential.user;
           console.log("User logged in successfully:", user);
           setIsAuthenticated(true); // Set isAuthenticated to true after successful login
+          localStorage.removeItem("nickname");
           //navigate('/'); // Redirect to homepage after login
         })
         .catch((error) => {
@@ -51,13 +54,22 @@ const Signup = () => {
         });
     } else {
       // Perform signup
+      if (!nickname.trim()) {
+        // If nickname is empty or only contains whitespaces, show an error message
+        setIsSubmitting(false);
+        setIsNicknameValid(false); // Set isNicknameValid to false to show the error message
+        return;
+      }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Handle the successful sign-up
         setIsSubmitting(false);
         const user = userCredential.user;
         console.log("User signed up successfully:", user);
+        localStorage.setItem("nickname", nickname);
         setIsAuthenticated(true); // Set isAuthenticated to true after successful login
+        localStorage.removeItem("nickname");
         //navigate('/');  // Replace '/homepage' with the correct path to your homepage
       })
       .catch((error) => {
@@ -86,13 +98,33 @@ const Signup = () => {
           </div>
           <div className="card sm:w-[30rem] shadow-2xl bg-base-100">
             <div className="card-body">
+              {!isLogin && (  // Show the nickname field only when not in login mode
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Nickname</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Your nickname"
+                  className={`input input-bordered ${isNicknameValid ? '' : 'input-error'}`}
+                  value={nickname}
+                  onChange={(e) => {
+                    setNickname(e.target.value);
+                    setIsNicknameValid(true); // Reset the error when typing
+                  }}
+                />
+                {!isNicknameValid && (
+                  <p className="text-red-500 mt-1">Nickname is required for signup.</p>
+                )}
+              </div>
+              )}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="email"
+                  placeholder="Your email"
                   className="input input-bordered"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -104,7 +136,7 @@ const Signup = () => {
                 </label>
                 <input
                   type="password"
-                  placeholder="password"
+                  placeholder="Your password"
                   className="input input-bordered"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

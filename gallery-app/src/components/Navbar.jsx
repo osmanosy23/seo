@@ -16,14 +16,22 @@ const Navbar = () => {
       });
   };
 
+  const nickname = localStorage.getItem("nickname");
+
   return (
   <div className="navbar bg-base-100 justify-between">
-    <a className="font-bold btn btn-ghost normal-case text-xl">GalleryPro 📷</a>
+    <a className="font-bold btn btn-ghost normal-case text-3xl">GalleryPro 📷</a>
     {user ? (
-        <button onClick={handleLogout}>Logout</button>
+      <div className="flex items-center">
+      {nickname && <span className="text-base-content mr-4">Welcome, {nickname}!</span>}
+       {/* <p className="text-white">Welcome, {nickname ? nickname : user.email}</p> */}
+      <button className="btn btn-primary btn-sm" onClick={handleLogout}>
+        Logout
+      </button>
+      </div>  
       ) : (
         // Optionally, show a login button or other content if the user is not logged in
-        <button>Login</button>
+        <button className="btn btn-primary btn-sm">Login</button>
       )}
   </div>
   );
