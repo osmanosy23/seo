@@ -1,13 +1,38 @@
+import useFirestore from "../hooks/useFirestore";
+
 const ImageGallery = () => {
-  return <div className='grid md:grid-cols-3 justify-center gap-4 mt-10'>
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure><img src="https://media.istockphoto.com/id/1347455404/photo/shot-of-an-unrecognizable-woman-spending-a-day-in-the-city.jpg?s=612x612&w=0&k=20&c=W3-QMPd9D-ok_upk94ooFtb3wnWUZW4Gu8dtYRH3fKI=" alt="Shoes" /></figure>
-      <div className="card-body">
-        <p>By:</p>
-        <span>Created on:</span>
+  const { docs: images, isLoading } = useFirestore('images');
+  // console.log(docs)
+
+  if (isLoading) {
+    return (
+      <div className='text-center mt-10'>
+        <progress className="progress w-56"></progress>
       </div>
+    )
+  }
+
+
+  return (
+    <div className='grid md:grid-cols-3 justify-center gap-4 mt-10'>
+      {images.map((image) => (
+        <div
+          key={image.imageUrl}
+          className="card card-compact w-full bg-base-100 shadow-xl">
+          <figure className='max-h-[15rem]'>
+            <img src={image.imageUrl} alt="Picture Loading" />
+          </figure>
+
+
+          <div className="card-body">
+            <p>Upload by: {image.userEmail}</p>
+            <span>Created on: {image.createdAt.toLocaleDateString()}</span>
+
+          </div>
+        </div>
+      ))}
     </div>
-  </div>
+  );
 };
 
 export default ImageGallery;
