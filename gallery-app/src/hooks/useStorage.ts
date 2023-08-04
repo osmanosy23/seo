@@ -40,8 +40,8 @@ const useStorage = () => {
         setProgress(progress);
         // store data into firestore 
         await addDoc(collection(db, "images"), {
-          imageURL: downloadURL,
-          createAt: new Date(),
+          imageUrl: downloadURL,
+          createdAt: new Date(),
           userEmail: user?.email
         });
       });
