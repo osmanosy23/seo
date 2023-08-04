@@ -2,12 +2,14 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { createContext, useState, useEffect } from 'react';
 
+
+
 // create context 
 
 export const AuthContext = createContext({
   user: null,
   isLoading: false,
-  signOut: () => {}, // Placeholder for the signOut function
+  signOut: () => { }, // Placeholder for the signOut function
 })
 
 // create provider
