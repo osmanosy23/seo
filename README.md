@@ -33,7 +33,15 @@ Join our growing community of photography enthusiasts and embark on a visual jou
 
 <br>
 
-**In order to run the application, cd into 'gallery-app' and run** *npm run dev*
+**In order to run the application, cd into 'gallery-app' and run** *npm run dev* <br>
+
+*Note: In order to use the random button generator, follow these steps:*
+<ol>
+    <li>Make an account at Unsplash.com</li>
+    <li>Head over to "Your apps," and click on "New Application" and create one</li>
+    <li>Once that's done, you should be able to click on your application and see your access key and your secret key. Use your access key</li>
+    <li>In the src folder, make a file called "apikey.js" and place your access key there, making sure to export it as apikey</li>
+</ol>
 
 
  
