@@ -31,6 +31,10 @@ const Signup = () => {
     console.log("Email:", email);
     console.log("Password:", password);
 
+    const nicknameFromEmail = email.split('@')[0];
+    setNickname(nicknameFromEmail); // Set the nickname state
+    localStorage.setItem("nickname", nicknameFromEmail);
+
     if (isLogin) {
       // Perform login
       signInWithEmailAndPassword(auth, email, password)
@@ -40,7 +44,6 @@ const Signup = () => {
           const user = userCredential.user;
           console.log("User logged in successfully:", user);
           setIsAuthenticated(true); // Set isAuthenticated to true after successful login
-          localStorage.removeItem("nickname");
           //navigate('/'); // Redirect to homepage after login
         })
         .catch((error) => {
@@ -69,7 +72,6 @@ const Signup = () => {
           console.log("User signed up successfully:", user);
           localStorage.setItem("nickname", nickname);
           setIsAuthenticated(true); // Set isAuthenticated to true after successful login
-          localStorage.removeItem("nickname");
           //navigate('/');  // Replace '/homepage' with the correct path to your homepage
         })
         .catch((error) => {
@@ -91,11 +93,12 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleAuth} name="authForm">
+      <div className="text-center">
+            <h1 className="text-5xl font-bold" style={{margin: '20px 0'}}>Gallery Pro 📸</h1>
+          </div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold">Gallery Pro</h1>
-          </div>
+          <div className="flex flex-col md:flex-row"> {/* New container for signup and description */}          
           <div className="card sm:w-[30rem] shadow-2xl bg-base-100">
             <div className="card-body">
               {!isLogin && (  // Show the nickname field only when not in login mode
@@ -159,9 +162,11 @@ const Signup = () => {
               {signupError && <p className="text-red-500 mt-4">{signupError}</p>}
             </div>
           </div>
-          <div className="text-center mt-6">
-            { /* Replace <p> with <div> here */}
-            <div>{galleryDescription}</div>
+          <div className="md:ml-8 mt-6 md:mt-0 md:flex-1"> {/* Gallery description */}
+              <div className="text-center md:text-left">
+                <div>{galleryDescription}</div> {/* Move gallery description here */}
+              </div>
+            </div>
           </div>
         </div>
       </div>

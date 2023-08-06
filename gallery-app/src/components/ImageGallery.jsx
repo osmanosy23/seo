@@ -64,6 +64,7 @@ const ImageGallery = () => {
 
   return (
     <div>
+      <h2 className="text-4xl text-center" style={{margin: '20px 0'}}>User Images</h2>
       <div className='grid md:grid-cols-3 justify-center gap-4 mt-10'>
         {images.map((image) => (
           <div
@@ -100,7 +101,8 @@ const ImageGallery = () => {
               <img src={image.urls?.regular} alt="Random Image" className="random-image" style={{ maxWidth: '300px' }}/>
               </figure>
               <div className="card-body">
-              <p style={{ fontSize: '18px', margin: '10px 0' }}>By: {image.user?.name}</p>
+              <p style={{ fontSize: '18px', margin: '10px 0' }}> {image.user?.name}</p>
+              {/* // removed "by" from above */}
               </div>
               </div>
             </div>
