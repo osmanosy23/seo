@@ -14,15 +14,26 @@ With Gallery Pro, you can:
 Join our growing community of photography enthusiasts and embark on a visual journey like never before. Sign up today and unlock the full potential of Gallery Pro!
 
 
+**Requirements**<br>
+*Users must install/run:*<br>
+<ol>
+    <li>npm install vite</li> </li><br>
+    <li>npm install firebase@latest </li> <br>
+    <li>npm install--save-dev jest @testing-library/react @testing-library/jest-dom </li></br>
+    <li>npm i uuid</li><br>
+    <li>npm install axios</li> <br>
+</ol>
 
-Requirements
-Users must install/run:
-    npm install vite
-    npm install firebase@latest
-    npm install --save-dev jest @testing-library/react @testing-library/jest-dom
-    npm i uuid
-    npm install axios
+![image](https://github.com/osmanosy23/seo/assets/104279983/cf24634c-7e87-4f29-966f-6546c10ba126)
 
+
+![image](https://github.com/osmanosy23/seo/assets/104279983/db57fa01-aaa1-4930-abd8-2947f285f9c9)
+
+![image](https://github.com/osmanosy23/seo/assets/104279983/2d1b6c96-3828-46ab-8996-d2c9da91c406)
+
+<br>
+
+**In order to run the application, cd into 'gallery-app' and run** *npm run dev*
 
 
  
