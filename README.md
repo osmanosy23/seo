@@ -27,9 +27,9 @@ Join our growing community of photography enthusiasts and embark on a visual jou
 ![image](https://github.com/osmanosy23/seo/assets/104279983/cf24634c-7e87-4f29-966f-6546c10ba126)
 
 
-![image](https://github.com/osmanosy23/seo/assets/104279983/db57fa01-aaa1-4930-abd8-2947f285f9c9)
+![image](https://github.com/osmanosy23/seo/assets/104279983/bb6ab74d-1cb6-488b-9438-5df08559ba4b)
 
-![image](https://github.com/osmanosy23/seo/assets/104279983/2d1b6c96-3828-46ab-8996-d2c9da91c406)
+![image](https://github.com/osmanosy23/seo/assets/104279983/621e9baf-6e63-483a-a6b4-68eb050abc21)
 
 <br>
 
