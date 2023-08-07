@@ -32,8 +32,9 @@ const Signup = () => {
     console.log("Password:", password);
 
     const nicknameFromEmail = email.split('@')[0];
-    setNickname(nicknameFromEmail); // Set the nickname state
-    localStorage.setItem("nickname", nicknameFromEmail);
+    const capitalizedNickname = nicknameFromEmail.charAt(0).toUpperCase() + nicknameFromEmail.slice(1);
+    setNickname(capitalizedNickname); // Set the nickname state
+    localStorage.setItem("nickname", capitalizedNickname);
 
     if (isLogin) {
       // Perform login

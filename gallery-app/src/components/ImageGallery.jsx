@@ -8,6 +8,11 @@ const ImageGallery = () => {
   const [randomImage, setRandomImage] = useState(null);
   const lastImageRef = useRef(null); // Create a ref for the last image element
 
+  const formatUsername = (email) => {
+    const formattedUsername = email.split('@')[0];
+    return formattedUsername;
+  };
+
   useEffect(() => {
     // Set up the Intersection Observer
     const observer = new IntersectionObserver(
@@ -76,7 +81,7 @@ const ImageGallery = () => {
 
 
             <div className="card-body">
-              <p>Author: {image.userEmail}</p>
+              <p>Author: {formatUsername(image.userEmail)}</p>
               <span>Posted on: {image.createdAt.toLocaleDateString()}</span>
 
             </div>
