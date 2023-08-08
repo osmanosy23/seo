@@ -2,7 +2,7 @@
 
 **Welcome to Gallery Pro!**
 
-_Capture, Collect, and Share Your Precious Moments with Others!_
+<em>Capture, Collect, and Share Your Precious Moments with Others!</em>
 
 Gallery Pro is your go-to destination for creating a stunning photo gallery of your cherished memories. Whether it's breathtaking landscapes, heartwarming family moments, or artistic snapshots, our photo gallery app lets you curate and showcase your best shots effortlessly.
 
@@ -15,10 +15,16 @@ With Gallery Pro, you can:
 
 Join our growing community of photography enthusiasts and embark on a visual journey like never before. Sign up today and unlock the full potential of Gallery Pro!
 
+Slideshow Presentation:
+https://docs.google.com/presentation/d/1hsHs65Y311pQ4nt2p4CskYrwWz_GlNmFBCRbeAJlixo/edit?usp=sharing 
 
-**Requirements**<br>
-*Code users must install/run:*<br>
-<ol>
+![image](https://github.com/osmanosy23/seo/assets/100744222/a6727958-773c-4156-8ed7-ac786e555405)
+
+![image](https://github.com/osmanosy23/seo/assets/104279983/621e9baf-6e63-483a-a6b4-68eb050abc21)
+
+<h2><em>Requirements</em></h2>
+<strong>Code users must install/run:</strong>
+<ol><br>
     <li>npm install vite</li> </li><br>
     <li>npm install firebase@latest </li><br>
     <li>npm install--save-dev jest @testing-library/react @testing-library/jest-dom </li><br>
@@ -28,11 +34,11 @@ Join our growing community of photography enthusiasts and embark on a visual jou
     <li>npm run build and firebase deploy to deploy</li><br>
 </ol>
 
-![image](https://github.com/osmanosy23/seo/assets/100744222/a6727958-773c-4156-8ed7-ac786e555405)
-
-![image](https://github.com/osmanosy23/seo/assets/104279983/621e9baf-6e63-483a-a6b4-68eb050abc21)
-
+<h2>Demo:</h2>
+https://github.com/osmanosy23/seo/assets/100744222/d18524f6-7c10-4ed7-8d2c-aa82fe383206
 <br>
+
+<h3>Software and Tools used: <em>React, Vite, Firebase, DaisyUI, Flickr API, Unsplash</em></h3>
 
 *Note: In order to use the random button generator, follow these steps:*
 <ol>
@@ -41,8 +47,3 @@ Join our growing community of photography enthusiasts and embark on a visual jou
     <li>Once that's done, you should be able to click on your application and see your access key and your secret key. Use your access key</li>
     <li>In the src folder, make a file called "apikey.js" and place your access key there, making sure to export it as apikey</li>
 </ol>
-
-Slideshow:
-https://docs.google.com/presentation/d/1hsHs65Y311pQ4nt2p4CskYrwWz_GlNmFBCRbeAJlixo/edit?usp=sharing 
-
- 
