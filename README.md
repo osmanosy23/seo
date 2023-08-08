@@ -34,7 +34,7 @@ https://docs.google.com/presentation/d/1hsHs65Y311pQ4nt2p4CskYrwWz_GlNmFBCRbeAJl
     <li>npm run build and firebase deploy to deploy</li><br>
 </ol>
 
-<h2>Demo:</h2>
+<h2>Demo</h2>
 https://github.com/osmanosy23/seo/assets/100744222/d18524f6-7c10-4ed7-8d2c-aa82fe383206
 <br>
 
